@@ -1,0 +1,267 @@
+* {
+  text-decoration: none;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  padding-bottom: 50px;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgb(228, 228, 228);
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.481);
+    background-color: #f2f201;
+    border-radius: 3px;
+  }
+}
+.toolbar {
+  background-color: rgb(27, 32, 39);
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+
+  a {
+    color: whitesmoke;
+    &:hover {
+      color: #f7ff82db;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  height: 30px;
+  position: relative;
+  align-items: center;
+
+  input {
+    padding: 9px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(142, 142, 142);
+    text-align: center;
+
+    &::placeholder {
+      color: rgba(228, 225, 225, 0.546);
+    }
+  }
+  .search-btn {
+    border: 1px solid lightgray;
+    border-left: 1px solid rgba(184, 184, 184, 0.409);
+    border-radius: 0 5px 5px 0;
+    background-color: transparent;
+    user-select: none;
+
+    span {
+      font-size: 22px;
+      height: 100%;
+      padding: 0px 5px;
+      color: rgb(227, 227, 227);
+      &:hover {
+        cursor: pointer;
+        color: #f7ff82db;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .toolbar {
+    flex-direction: column;
+    padding: 30px 0;
+    gap: 25px;
+  }
+  .main-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.each-recipe {
+  background-color: whitesmoke;
+  border: 1px solid rgb(224, 224, 224);
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    border-color: black;
+  }
+}
+
+.all-recipes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.pagination {
+  margin: 50px auto;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+
+  .pagination-button {
+    border: 1px solid #767602;
+    padding: 3px 9px;
+    border-radius: 2px;
+    transition: all 0.2s;
+
+    &:hover {
+      color: #767602;
+      cursor: pointer;
+      border-color: #767602;
+      background-color: #f9f967b8;
+    }
+  }
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid rgb(237, 237, 237);
+  padding: 5px 10px;
+  border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    background-color: rgb(203, 242, 255);
+  }
+}
+.active {
+  border-color: black;
+}
+
+.card {
+  .title {
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 500;
+  }
+
+  .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.single-recipe-page {
+  overflow: hidden;
+  padding: 0 25px;
+  margin-bottom: 80px;
+  .single-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+  }
+  .single-img {
+    max-width: 600px;
+    margin: 20px 50%;
+    transform: translateX(-50%);
+  }
+
+  .main-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .main-instructions {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+
+    .ingredients {
+      width: 20%;
+    }
+    .instructions {
+      width: 70%;
+    }
+  }
+
+  li {
+    padding: 5px;
+  }
+  .list {
+    margin-bottom: 25px;
+  }
+
+  .tags-box {
+    width: 80%;
+    margin: 10px auto;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .main-instructions {
+    flex-direction: column;
+
+    .ingredients,
+    .instructions {
+      width: 100% !important;
+      margin-bottom: 20px;
+    }
+  }
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: rgba(148, 239, 209, 0.605);
+  width: fit-content;
+  padding: 5px 7px;
+  border-radius: 3px;
+  transition: all 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(205, 246, 232, 0.522);
+  }
+}
+.found-recipes {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: auto;
+}
